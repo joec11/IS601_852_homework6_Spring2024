@@ -1,19 +1,20 @@
-# Homework 3
+# Homework 4
 
 ## 3 Levels Of Calculator Homework
 
-### Created 3 Branches
-1. Main - Basic Calculator with functions
-2. Part 2 - Intermediate Calculator with static methods on Calculator class and instance methods on Calculation class to perform operations on the data in the calculation instance.
-3. Part 3 - Advanced Calculator
-
 ### Functionality
-1. Performs addition, subtraction, multiplication, and division.
-2. Throws exceptions for divide by zero and tests that the exception is thrown.
-3. Uses classes, static methods, and class methods.
-4. Stores a history of calculations to retrieve the last calculation and allows for adding a calculation.
-5. Uses type hints for input parameter types and return types.
-6. Uses parameterized test data.
+1. Uses the faker library to generate fake test data.
+2. Accepts user input.
 
 ### Testing
 1. pytest --pylint --cov
+
+2. pytest --num_records=100
+3. pytest tests/test_main.py
+4. pytest --num_records=100 tests/test_calculation.py
+
+5. python main.py 10 5 add
+6. python main.py 22 8 subtract
+7. python main.py 3 4 multiply
+8. python main.py 50 2 divide
+9. python main.py 2 0 divide
