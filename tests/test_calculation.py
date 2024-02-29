@@ -9,6 +9,7 @@ import pytest
 from calculator.calculation import Calculation
 from calculator.operations import add, divide
 
+@pytest.fixture
 def test_calculation_operations(a, b, operation, expected):
     """
     Test calculation operations with various scenarios.
