@@ -5,6 +5,7 @@ import pytest
 from calculator.calculation import Calculation
 from calculator.operations import divide
 
+@pytest.fixture
 def test_operation(a, b, operation, expected):
     '''Testing various operations'''
     calculation = Calculation.create(a, b, operation)
