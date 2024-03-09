@@ -2,7 +2,7 @@
 import pytest
 from app import App
 
-def test_app_greet_command(capfd, monkeypatch):
+def test_app_greet_command(monkeypatch):
     """Test that the REPL correctly handles the 'greet' command."""
     # Simulate user entering 'greet' followed by 'exit'
     inputs = iter(['greet', 'exit'])
@@ -14,7 +14,7 @@ def test_app_greet_command(capfd, monkeypatch):
 
     assert str(e.value) == "Exiting...", "The app did not exit as expected"
 
-def test_app_menu_command(capfd, monkeypatch):
+def test_app_menu_command(monkeypatch):
     """Test that the REPL correctly handles the 'menu' command."""
     # Simulate user entering 'menu' followed by 'exit'
     inputs = iter(['menu', 'exit'])
