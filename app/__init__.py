@@ -26,10 +26,13 @@ class App:
         logging.info("Logging configured.")
     
     def load_environment_variables(self):
-        """Load the environment variables"""
-        settings = {key: value for key, value in os.environ.items()}
-        logging.info("Environment variables loaded.")
-        return settings
+        """Load the environment variables from the env file"""
+        if os.path.exists(".env"):
+            logging.info("Environment variables loaded from .env file."); \
+            return dotenv_values(".env")
+        else:
+            logging.warning("The .env file does not exist. Operating system environment variables loaded."); \
+            return {key: value for key, value in os.environ.items()}
 
     def get_environment_variable(self, env_var: str = 'ENVIRONMENT'):
         """Get environment variable"""
